@@ -22,6 +22,7 @@ class TestCreateTrip:
         fill_address_page = FillAddressFields(driver, 'https://едем.рф/account/profile')
         fill_address_page.open()
         fill_address_page.fill_address_fields_and_submit()
+        time.sleep(1)
         assert driver.current_url == 'https://xn--d1abb2a.xn--p1ai/create-route/date', 'URLS ARE NOT THE SAME'
         time.sleep(2)
 
