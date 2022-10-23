@@ -16,3 +16,6 @@ class BasePage:
     def elements_are_visible(self, locator, timeout=5):
         return Wait(self.driver, timeout).until(EC.visibility_of_all_elements_located(locator))
 
+    def element_to_be_clickable(self, locator, timeout=5):
+        return Wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
+
