@@ -1,5 +1,4 @@
 import time
-
 from locators.navigate_locators import NavigateLocators
 from pages.base_page import BasePage
 from locators.login_page_locators import LoginPageLocators
