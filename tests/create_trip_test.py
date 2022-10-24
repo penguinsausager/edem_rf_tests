@@ -7,6 +7,7 @@ from pages.select_date_page import SelectDate
 from pages.create_car_page import CreateCarPage
 from pages.trip_details_page import TripDetailsPage
 from pages.trip_cost_page import TripCostPage
+from pages.payment_type_page import PaymentTypePage
 
 
 class TestCreateTrip:
@@ -49,4 +50,9 @@ class TestCreateTrip:
     def test_select_trip_cost_and_submit(self, driver):
         trip_costs = TripCostPage(driver)
         trip_costs.select_cost_checkbox_and_submit()
+        time.sleep(1)
+
+    def test_select_payment_type_and_submit(self, driver):
+        select_payment_type = PaymentTypePage(driver)
+        select_payment_type.select_payment_type()
         time.sleep(2)
