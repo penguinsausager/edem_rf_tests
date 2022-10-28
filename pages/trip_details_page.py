@@ -1,7 +1,4 @@
-import time
-
 from pages.base_page import BasePage
-from locators.select_date_locators import SelectDateLocators
 from locators.submit_button_locator import SubmitButtonLocator
 
 

@@ -1,8 +1,8 @@
 from selenium.webdriver import Keys
 
 from pages.base_page import BasePage
-from locators.fill_address_fields_locators import FillAddressFieldsLocators
-from locators.navigate_locators import NavigateLocators
+from locators.create_trip_related_locators.address_fields_locators import FillAddressFieldsLocators
+from locators.navigate_locators.header_navigate_locators import NavigateLocators
 from locators.submit_button_locator import SubmitButtonLocator
 
 
@@ -25,7 +25,3 @@ class FillAddressFields(BasePage):
 
         # Нажатие на клавишу "Далее"
         self.element_is_visible(SubmitButtonLocator.SUBMIT_BUTTON).click()
-
-
-
-

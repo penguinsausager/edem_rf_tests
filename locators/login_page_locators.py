@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+"""Локаторы на странице входа"""
+
 
 class LoginPageLocators:
     PHONE_NUMBER_INPUT = (By.XPATH, '//input[@name="phone"]')

@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+"""Заполнение полей ввода на странице "Создание поездки"."""
+
 
 class FillAddressFieldsLocators:
 
