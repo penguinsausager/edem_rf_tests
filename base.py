@@ -7,7 +7,7 @@ def base_dir():
 
 
 def base_url_beta():
-    return 'https://beta.edemrf.com/'
+    return 'https://beta.edemrf.com:452srCoS6F29JX6A3ttSk9nT23ZqtJy@beta.edemrf.com/'
 
 
 def base_url_prod():

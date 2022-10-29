@@ -1,5 +1,4 @@
 import time
-from auth_data import phone_number
 from pages.login_page import LoginPage
 from pages.fill_address_fields_page import FillAddressFields
 from pages.select_date_page import SelectDate
@@ -14,27 +13,33 @@ from pages.trip_details_view_page import TripDetailsViewPage
 from pages.edit_trip_page import EditTrip
 from pages.move_to_profile_page import MoveToProfilePage
 from pages.profile_page import ProfilePage
-from base import base_url_beta
+from base import base_url_beta, base_url_prod, base_dir
+from auth_data import phone_number
+from pages.main_page import MainPage
+import os.path
 
 
 class TestCreateTrip:
 
     def test_login(self, driver):
+        main_page = MainPage(driver)
         login_page = LoginPage(driver, base_url_beta())
         login_page.open()
-        time.sleep(3)
-        # login_page.fill_alert()
-        # time.sleep(5)
-        login_page.fill_fields_and_submit()
-        login_page.save_cookie()
-        # login_page.set_cookie()
-        # assert driver.current_url == 'https://xn--d1abb2a.xn--p1ai/account/profile', 'URLS ARE NOT THE SAME'
+        main_page.login_click()
+        if os.path.exists(f'{base_dir()}/cookies/{phone_number}_cookies'):
+            login_page.set_cookie()
+            time.sleep(1)
+        else:
+            login_page.fill_fields_and_submit()
+            login_page.save_cookie()
+            time.sleep(1)
+        assert driver.current_url == 'https://xn--d1abb2a.xn--p1ai/account/profile', 'URLS ARE NOT THE SAME'
 
     def test_fill_address(self, driver):
         fill_address_page = FillAddressFields(driver)
         fill_address_page.fill_address_fields_and_submit()
         time.sleep(1)
-        assert driver.current_url == 'https://xn--d1abb2a.xn--p1ai/create-route/date', 'URLS ARE NOT THE SAME'
+        # assert driver.current_url == 'https://xn--d1abb2a.xn--p1ai/create-route/date', 'URLS ARE NOT THE SAME'
 
     def test_select_date(self, driver):
         select_date = SelectDate(driver)
