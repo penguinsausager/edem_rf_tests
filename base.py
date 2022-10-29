@@ -6,9 +6,13 @@ def base_dir():
     return path
 
 
-def base_url_beta():
+def base_auth_url_beta():
     return 'https://beta.edemrf.com:452srCoS6F29JX6A3ttSk9nT23ZqtJy@beta.edemrf.com/'
 
 
+def base_url_beta():
+    return 'https://beta.edemrf.com'
+
+
 def base_url_prod():
-    return 'https://едем.рф'
+    return 'https://xn--d1abb2a.xn--p1ai'

@@ -18,15 +18,9 @@ class BasePage:
     def open(self):
         self.driver.get(self.url)
 
-    def fill_alert_fields(self):
-        pass
-
-
-
     def save_cookie(self):
         print(base_dir())
         pickle.dump(self.driver.get_cookies(), open(f"{base_dir()}/cookies/{phone_number}_cookies", "wb"))
-        # self.driver.delete_all_cookies()
 
     def set_cookie(self):
         for cookie in pickle.load(open(f"{base_dir()}/cookies/{phone_number}_cookies", "rb")):
