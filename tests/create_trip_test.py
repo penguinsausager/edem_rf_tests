@@ -1,4 +1,5 @@
 import time
+import os.path
 from pages.login_page import LoginPage
 from pages.fill_address_fields_page import FillAddressFields
 from pages.select_date_page import SelectDate
@@ -13,10 +14,9 @@ from pages.trip_details_view_page import TripDetailsViewPage
 from pages.edit_trip_page import EditTrip
 from pages.move_to_profile_page import MoveToProfilePage
 from pages.profile_page import ProfilePage
-from base import base_url_beta, base_auth_url_beta, base_url_prod, base_dir
 from auth_data import phone_number
 from pages.main_page import MainPage
-import os.path
+from base import base_url_beta, base_auth_url_beta, base_url_prod, base_dir
 
 
 class TestCreateTrip:
