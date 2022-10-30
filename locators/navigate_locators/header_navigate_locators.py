@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 """Навигационные локаторы, доступные с любой страницы сайта"""
 
 
-class NavigateLocators:
+class HeaderNavigateLocators:
 
     EDEMRF_LOGO = (By.CSS_SELECTOR, '.header_logo-type')
 

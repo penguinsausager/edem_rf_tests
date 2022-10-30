@@ -1,7 +1,7 @@
 from selenium.webdriver import Keys
 
 from pages.base_page import BasePage
-from locators.car_locators import CarLocators
+from locators.profile_locators.car_locators import CarLocators
 from locators.submit_button_locator import SubmitButtonLocator
 
 

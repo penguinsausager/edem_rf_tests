@@ -2,14 +2,14 @@ from selenium.webdriver import Keys
 
 from pages.base_page import BasePage
 from locators.create_trip_related_locators.address_fields_locators import FillAddressFieldsLocators
-from locators.navigate_locators.header_navigate_locators import NavigateLocators
+from locators.navigate_locators.header_navigate_locators import HeaderNavigateLocators
 from locators.submit_button_locator import SubmitButtonLocator
 
 
 class FillAddressFields(BasePage):
     def fill_address_fields_and_submit(self):
         # Переход на страницу создания поездки
-        self.element_is_visible(NavigateLocators.CREATE_TRIP_BUTTON).click()
+        self.element_is_visible(HeaderNavigateLocators.CREATE_TRIP_BUTTON).click()
 
         # Ввод значений в поля "Откуда" и "Улица, район отправления"
         self.element_is_visible(FillAddressFieldsLocators.CITY_FROM).send_keys('Екатеринбург')
