@@ -14,48 +14,34 @@ from pages.trip_details_view_page import TripDetailsViewPage
 from pages.edit_trip_page import EditTrip
 from pages.move_to_profile_page import MoveToProfilePage
 from pages.profile_page import ProfilePage
-from auth_data import phone_number
 from pages.main_page import MainPage
-from base import base_url_beta, base_auth_url_beta, base_url_prod, base_dir
+from config import base_url, auth, base_auth_url
+from login_test import TestLogin
 
 
 class TestCreateTrip:
 
-    def test_login(self, driver):
-        main_page = MainPage(driver)
-        login_page = LoginPage(driver, base_auth_url_beta())
-        login_page.open()
-        main_page.login_click()
-
-        if os.path.exists(f'{base_dir()}/cookies/{phone_number}_cookies'):
-            login_page.set_cookie()
-            time.sleep(1)
-        else:
-            login_page.fill_fields_and_submit()
-            login_page.save_cookie()
-            time.sleep(1)
-        assert driver.current_url == f'{base_url_beta()}/account/profile', 'URLS ARE NOT THE SAME'
-
     def test_fill_address(self, driver):
+        auth(driver)
         fill_address_page = FillAddressFields(driver)
         fill_address_page.fill_address_fields_and_submit()
         time.sleep(1)
-        assert driver.current_url == f'{base_url_beta()}/create-route/date', 'URLS ARE NOT THE SAME'
+        assert driver.current_url == f'{base_url()}/create-route/date', 'URLS ARE NOT THE SAME'
 
     def test_select_date(self, driver):
         select_date = SelectDate(driver)
         select_date.select_date_and_submit()
         time.sleep(1)
-        # assert driver.current_url == 'https://xn--d1abb2a.xn--p1ai/create-route/car', 'URLS ARE NOT THE SAME'
+        assert driver.current_url == f'{base_url()}/create-route/car', 'URLS ARE NOT THE SAME'
 
     def test_create_car(self, driver):
         create_car = CarPage(driver)
         create_car.create_car_and_submit()
         time.sleep(1)
-        # assert driver.current_url == 'https://xn--d1abb2a.xn--p1ai/create-route/details', 'URLS ARE NOT THE SAME'
+        assert driver.current_url == f'{base_url()}/create-route/details', 'URLS ARE NOT THE SAME'
 
     def test_trip_details(self, driver):
-        trip_details = (driver)
+        trip_details = TripDetailsPage(driver)
         trip_details.select_checkboxes()
         time.sleep(1)
 
@@ -108,4 +94,5 @@ class TestCreateTrip:
         delete_car_and_submit = CarPage(driver)
         delete_car_and_submit.delete_car_and_submit()
         time.sleep(2)
+
 
