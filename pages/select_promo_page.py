@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from locators.submit_button_locator import SubmitButtonLocator
+from locators.navigate_locators.submit_button_locator import SubmitButtonLocator
 from locators.create_trip_related_locators.promo_locators import PromoLocators
 
 

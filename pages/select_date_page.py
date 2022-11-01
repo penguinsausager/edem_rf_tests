@@ -2,7 +2,7 @@ import time
 
 from pages.base_page import BasePage
 from locators.create_trip_related_locators.date_and_time_locators import SelectDateAndTimeLocators
-from locators.submit_button_locator import SubmitButtonLocator
+from locators.navigate_locators.submit_button_locator import SubmitButtonLocator
 
 
 class SelectDate(BasePage):

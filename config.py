@@ -2,10 +2,10 @@ import os
 import pathlib
 import time
 
-__prod_url__ = os.getenv('BASE_URL_PROD')
-__beta_url__ = os.getenv('BASE_URL_BETA')
-__beta_login__ = os.getenv('AUTH_LOGIN_BETA')
-__beta_password__ = os.getenv('AUTH_LOGIN_PASSWORD')
+__prod_url = os.getenv('BASE_URL_PROD')
+__beta_url = os.getenv('BASE_URL_BETA')
+__beta_login = os.getenv('AUTH_LOGIN_BETA')
+__beta_password = os.getenv('AUTH_LOGIN_PASSWORD')
 
 
 def base_dir():
@@ -19,16 +19,16 @@ def cookies_directory_path():
 
 def base_auth_url():
     if os.getenv('MODE') == 'BETA':
-        return f'{__beta_url__}:{__beta_password__}@{__beta_login__}'
+        return f'{__beta_url}:{__beta_password}@{__beta_login}'
     elif os.getenv('MODE') == 'PROD':
-        return __prod_url__
+        return __prod_url
 
 
 def base_url():
     if os.getenv('MODE') == 'BETA':
-        return __beta_url__
+        return __beta_url
     elif os.getenv('MODE') == 'PROD':
-        return __prod_url__
+        return __prod_url
 
 
 def auth(driver):
@@ -40,18 +40,16 @@ def auth(driver):
     login_page.open()
     main_page.login_click()
 
-    __phone_number__ = get_phone_number()
+    __phone_number = get_phone_number()
 
     if not os.path.exists(cookies_directory_path()):
         os.mkdir(cookies_directory_path())
 
-    if os.path.exists(f'{cookies_directory_path()}/{__phone_number__}_cookies'):
+    if os.path.exists(f'{cookies_directory_path()}/{__phone_number}_cookies'):
         login_page.set_cookie()
-        time.sleep(1)
     else:
         login_page.fill_fields_and_submit()
         login_page.save_cookie()
-        time.sleep(1)
 
 
 def get_phone_number():
