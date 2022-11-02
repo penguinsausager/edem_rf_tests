@@ -1,7 +1,5 @@
-import time
 from config import base_url, auth
 from pages.edit_trip_page import EditTrip
-from pages.fill_address_fields_page import FillAddressFields
 from pages.profile_options_page import AccountProfilePage
 from pages.routes_page import RoutesPage
 from pages.trip_details_view_page import TripDetailsViewPage
@@ -23,5 +21,4 @@ class TestDeleteTrip:
 
         edit_and_delete_trip = EditTrip(driver)
         edit_and_delete_trip.edit_and_delete_trip()
-        time.sleep(2)
 

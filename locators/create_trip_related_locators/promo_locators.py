@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 class PromoLocators:
 
-    FIRST_PROMO = (By.XPATH, '(//div[@class="route-promo_name-wrapper"])[1]')
-    SECOND_PROMO = (By.XPATH, '(//div[@class="route-promo_name-wrapper"])[2]')
-    THIRD_PROMO = (By.XPATH, '(//div[@class="route-promo_name-wrapper"])[3]')
-    FOURTH_PROMO = (By.XPATH, '(//div[@class="route-promo_name-wrapper"])[4]')
+    FREE_PROMO = (By.XPATH, '(//div[@class="route-promo_name-wrapper"])[1]')
+    STANDARD_PROMO = (By.XPATH, '(//div[@class="route-promo_name-wrapper"])[2]')
+    STANDARD_PLUS_PROMO = (By.XPATH, '(//div[@class="route-promo_name-wrapper"])[3]')
+    PREMIUM_PROMO = (By.XPATH, '(//div[@class="route-promo_name-wrapper"])[4]')

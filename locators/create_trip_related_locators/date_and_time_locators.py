@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 """Локаторы установки даты и времени на странице "Когда и во сколько планируете выезд"?"""
 
 
-class SelectDateAndTimeLocators:
+class DateAndTimeLocators:
 
     INPUT_DATE_FIELD = (By.XPATH, '//input[@data-name="createdDate"]')
     SELECT_NEXT_MONTH_BUTTON = (By.XPATH, '//div[@data-action="next"]')

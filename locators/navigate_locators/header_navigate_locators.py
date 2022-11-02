@@ -27,5 +27,5 @@ class HeaderNavigateLocators:
 
 
 
-    # ===перенести в другие локаторы
+    # перенести в другие локаторы
     PROFILE_OPTION = (By.XPATH, '//a[@class="profile_option"]')
