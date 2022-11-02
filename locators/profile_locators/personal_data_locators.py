@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+"""Локаторы на странице "Мой профиль". После перехода в "Мой профиль" в выпадающем меню"""
+
 
 class PersonalDataLocators:
 

@@ -4,6 +4,6 @@ from locators.create_trip_related_locators.promo_locators import PromoLocators
 
 
 class SelectPromoPage(BasePage):
-    def select_promo(self):
+    def select_free_promo(self):
         self.element_to_be_clickable(PromoLocators.FIRST_PROMO).click()
         self.element_to_be_clickable(SubmitButtonLocator.SUBMIT_BUTTON).click()

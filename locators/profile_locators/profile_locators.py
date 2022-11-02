@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+"""Локаторы на странице "Личные данные". После перехода из "Мой профиль/Личные данные"."""
+
 
 class ProfileLocators:
 
@@ -14,6 +16,3 @@ class ProfileLocators:
     REFUND_CARS = (By.XPATH, '//a[@href="/account/refunds/cards"]')
 
     LOGOUT = (By.CSS_SELECTOR, '.profile_button-logout')
-
-
-

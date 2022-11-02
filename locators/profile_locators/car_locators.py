@@ -18,10 +18,10 @@ class CarLocators:
     SELECT_CAR_SECOND = (By.XPATH, '(//div[@class="route-car_wrap"])[2]')
     SELECT_CAR_THIRD = (By.XPATH, '(//div[@class="route-car_wrap"])[3]')
 
-    CREATE_CAR_BUTTON = (By.CSS_SELECTOR, '.form-button')
+    CREATE_CAR_BUTTON = (By.CSS_SELECTOR, '.form-button.button-md.button-gray.js-routes-drafts-add-car-handler')
 
     # Кнопка "Удалить"
     DELETE_CAR = (By.CSS_SELECTOR, '.js-account-cars-remove-handler')
 
     # Кнопка "Удалить" на всплывающем окне "Подтверждение удаления"
-    DELETE_CONFIRM = (By.CSS_SELECTOR, '.js-popup-confirm')
+    DELETE_CONFIRM = (By.CSS_SELECTOR, '.form-button.button-blank-md.button-blank-blue.js-popup-confirm')
