@@ -1,6 +1,5 @@
 import os
 import pathlib
-import time
 
 __prod_url = os.getenv('BASE_URL_PROD')
 __beta_url = os.getenv('BASE_URL_BETA')

@@ -7,6 +7,7 @@ from config import base_dir, get_phone_number, cookies_directory_path
 
 
 class BasePage:
+
     __timeout = 1.5
     __phone_number = get_phone_number()
 

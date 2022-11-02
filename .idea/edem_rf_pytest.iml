@@ -6,6 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/tests/.pytest_cache/v" />
       <excludeFolder url="file://$MODULE_DIR$/.pytest_cache/v" />
       <excludeFolder url="file://$MODULE_DIR$/tests/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/cookies" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

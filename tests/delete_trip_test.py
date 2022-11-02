@@ -1,4 +1,4 @@
-from config import base_url, auth
+from config import auth
 from pages.edit_trip_page import EditTrip
 from pages.profile_options_page import AccountProfilePage
 from pages.routes_page import RoutesPage

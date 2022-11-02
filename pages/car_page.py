@@ -1,6 +1,3 @@
-import time
-
-from selenium.common import TimeoutException
 from selenium.webdriver import Keys
 
 from pages.base_page import BasePage
