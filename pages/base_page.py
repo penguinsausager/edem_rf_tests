@@ -7,7 +7,6 @@ from config import base_dir, get_phone_number, cookies_directory_path
 
 
 class BasePage:
-
     __timeout = 1.5
     __phone_number = get_phone_number()
 
@@ -29,7 +28,7 @@ class BasePage:
             self.driver.add_cookie(cookie)
         self.driver.refresh()
 
-    def presence_of_element_located(self, locator, timeout=__timeout):
+    def presence_of_element_located(self, locator, timeout=2):
         try:
             Wait(self.driver, timeout).until(EC.presence_of_element_located(locator))
             return True

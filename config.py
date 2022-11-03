@@ -31,7 +31,7 @@ def base_url():
 
 
 def auth(driver):
-    from pages.main_page import MainPage
+    from pages.main_site_page import MainPage
     from pages.login_page import LoginPage
 
     main_page = MainPage(driver)
@@ -56,3 +56,4 @@ def get_phone_number():
         return os.getenv('PHONE_NUMBER_BETA')
     elif os.getenv('MODE') == 'PROD':
         return os.getenv('PHONE_NUMBER_PROD')
+

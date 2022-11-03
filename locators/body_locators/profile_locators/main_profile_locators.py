@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 """Локаторы на странице "Личные данные". После перехода из "Мой профиль/Личные данные"."""
 
 
-class ProfileLocators:
+class MainProfileLocators:
 
     PROFILE_USER_INFO = (By.CSS_SELECTOR, '.profile-user')
 

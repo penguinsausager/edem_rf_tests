@@ -12,3 +12,5 @@ class DateAndTimeLocators:
     INPUT_TIME_FIELD = (By.XPATH, '//input[@name="createdTime"]')
     HOUR_SELECT = (By.CSS_SELECTOR, '.clockpicker-dial :nth-child(17)')
     MINUTE_SELECT = (By.CSS_SELECTOR, '.clockpicker-minutes > div:nth-child(4)')
+
+    RETURN_TRIP = (By.CSS_SELECTOR, '.form-button.button-md.button-gray.js-routes-drafts-add-reverse-route-handler')

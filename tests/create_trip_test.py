@@ -1,32 +1,34 @@
 import time
-from pages.select_date_page import SelectDate
-from pages.car_page import CarPage
+import pytest
+from pages.date_page import DatePage
+from pages.car_edit_page import CarEditPage
 from pages.trip_details_page import TripDetailsPage
 from pages.trip_cost_page import TripCostPage
 from pages.payment_type_page import PaymentTypePage
 from pages.payment_confirm_page import PaymentConfirmPage
-from pages.select_promo_page import SelectPromoPage
+from pages.promo_page import PromoPage
 from config import base_url, auth
-from pages.fill_address_fields_page import FillAddressFields
+from pages.address_fields_page import AddressFieldsPage
 
 
+@pytest.mark.run(order=3)
 class TestCreateTrip:
 
     def test_fill_address(self, driver):
         auth(driver)
-        fill_address_page = FillAddressFields(driver)
+        fill_address_page = AddressFieldsPage(driver)
         fill_address_page.fill_address_fields_and_submit()
         time.sleep(1)
         assert driver.current_url == f'{base_url()}/create-route/date', 'URLS ARE NOT THE SAME'
 
     def test_select_date(self, driver):
-        select_date = SelectDate(driver)
+        select_date = DatePage(driver)
         select_date.select_date_and_submit()
         time.sleep(1)
         assert driver.current_url == f'{base_url()}/create-route/car', 'URLS ARE NOT THE SAME'
 
     def test_create_car(self, driver):
-        create_car = CarPage(driver)
+        create_car = CarEditPage(driver)
         create_car.create_car_and_submit()
         time.sleep(1)
         assert driver.current_url == f'{base_url()}/create-route/details', 'URLS ARE NOT THE SAME'
@@ -56,8 +58,9 @@ class TestCreateTrip:
         assert driver.current_url == f'{base_url()}/create-route/success', 'URLS ARE NOT THE SAME'
 
     def test_select_promo(self, driver):
-        select_promo = SelectPromoPage(driver)
+        select_promo = PromoPage(driver)
         select_promo.select_free_promo()
         time.sleep(1)
         assert driver.current_url == f'{base_url()}/account/routes', 'URLS ARE NOT THE SAME'
+
 

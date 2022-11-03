@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 """Локаторы со страницы "Стоимость публикации объявления"."""
 
 
-class PaymentConfirmLocators:
+class PublishingCostLocators:
     # Чекбокс "Я соглашаюсь с условиями..."
     CHECKBOX = (By.CSS_SELECTOR, '.form-checkbox_caption')
 

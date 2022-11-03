@@ -13,7 +13,7 @@ class CarLocators:
 
     CAR_COLOR = (By.XPATH, '//span[@style="background: #FFC0CB;"]')
 
-    SELECT_ALL_CARS = (By.XPATH, '//div[@class="route-car_wrap"]')
+    ALL_CARS = (By.XPATH, '//div[@class="route-car_wrap"]')
     SELECT_CAR_FIRST = (By.XPATH, '(//div[@class="route-car_wrap"])[1]')
     SELECT_CAR_SECOND = (By.XPATH, '(//div[@class="route-car_wrap"])[2]')
     SELECT_CAR_THIRD = (By.XPATH, '(//div[@class="route-car_wrap"])[3]')

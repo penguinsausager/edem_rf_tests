@@ -1,24 +1,27 @@
+import time
+
+import pytest
+
 from config import auth
-from pages.edit_trip_page import EditTrip
-from pages.profile_options_page import AccountProfilePage
-from pages.routes_page import RoutesPage
-from pages.trip_details_view_page import TripDetailsViewPage
+from pages.edit_trip_page import EditTripPage
+from pages.main_profile_page import MainProfilePage
+from pages.active_and_archive_trips_page import ActiveAndArchiveTripsPage
+from pages.trip_info_page import TripInfoPage
 
 
+@pytest.mark.run(order=1)
 class TestDeleteTrip:
 
     def test_delete_trip(self, driver):
         auth(driver)
-        profile_options = AccountProfilePage(driver)
+        profile_options = MainProfilePage(driver)
+        trip_details = ActiveAndArchiveTripsPage(driver)
+        edit_trip_button_click = TripInfoPage(driver)
+        edit_trip_page = EditTripPage(driver)
+
         profile_options.activate_dropdown_menu()
         profile_options.move_to_trips()
-
-        trip_details = RoutesPage(driver)
         trip_details.trip_details_click()
-
-        edit_trip_button_click = TripDetailsViewPage(driver)
         edit_trip_button_click.edit_trip_click()
-
-        edit_and_delete_trip = EditTrip(driver)
-        edit_and_delete_trip.edit_and_delete_trip()
-
+        edit_trip_page.edit_and_delete_trip()
+        time.sleep(1)

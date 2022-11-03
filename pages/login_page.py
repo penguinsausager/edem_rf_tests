@@ -1,9 +1,8 @@
 import os
-
-from pages.base_page import BasePage
-from locators.login_page_locators import LoginPageLocators
-from locators.navigate_locators.submit_button_locators import SubmitButtonLocators
 import time
+from pages.base_page import BasePage
+from locators.body_locators.login_page_locators import LoginPageLocators
+from locators.submit_button_locator import SubmitButtonLocator
 
 
 class LoginPage(BasePage):
@@ -26,5 +25,4 @@ class LoginPage(BasePage):
         if os.getenv('MODE') == 'PROD':
             time.sleep(10)
 
-        self.element_is_visible(SubmitButtonLocators.SUBMIT_BUTTON).click()
-        time.sleep(1)
+        self.element_is_visible(SubmitButtonLocator.SUBMIT_BUTTON).click()

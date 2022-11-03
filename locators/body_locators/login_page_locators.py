@@ -11,4 +11,3 @@ class LoginPageLocators:
 
     REGISTER_BUTTON = (By.XPATH, '//div[@class = "common_form-footer-cell"]')
     REMIND_PASS_BUTTON = (By.XPATH, '//div[@class = "common_form-footer-cell"][2]')
-

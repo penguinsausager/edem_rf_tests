@@ -1,8 +1,8 @@
 from pages.base_page import BasePage
-from locators.navigate_locators.submit_button_locators import SubmitButtonLocators
+from locators.submit_button_locator import SubmitButtonLocator
 
 
 class PaymentConfirmPage(BasePage):
 
     def confirm_trip_payment(self):
-        self.element_to_be_clickable(SubmitButtonLocators.SUBMIT_BUTTON).click()
+        self.element_to_be_clickable(SubmitButtonLocator.SUBMIT_BUTTON).click()

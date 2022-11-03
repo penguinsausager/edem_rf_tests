@@ -24,8 +24,3 @@ class HeaderNavigateLocators:
 
     REGISTER_BUTTON = (By.XPATH, '(//a[@class="header_auth-link"])[1]')
     LOGIN_BUTTON = (By.CSS_SELECTOR, '.header_auth-box_sign :nth-child(2)')
-
-
-
-    # перенести в другие локаторы
-    PROFILE_OPTION = (By.XPATH, '//a[@class="profile_option"]')
