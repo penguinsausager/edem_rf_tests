@@ -6,7 +6,7 @@ from pages.main_profile_page import MainProfilePage
 from pages.personal_data_page import PersonalDataPage
 
 
-@pytest.mark.run(order=2)
+@pytest.mark.order2
 class TestDeleteCar:
 
     def test_delete_all_cars(self, driver):

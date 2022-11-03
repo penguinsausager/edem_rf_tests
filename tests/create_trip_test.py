@@ -11,7 +11,7 @@ from config import base_url, auth
 from pages.address_fields_page import AddressFieldsPage
 
 
-@pytest.mark.run(order=3)
+@pytest.mark.order3
 class TestCreateTrip:
 
     def test_fill_address(self, driver):
@@ -62,5 +62,4 @@ class TestCreateTrip:
         select_promo.select_free_promo()
         time.sleep(1)
         assert driver.current_url == f'{base_url()}/account/routes', 'URLS ARE NOT THE SAME'
-
 

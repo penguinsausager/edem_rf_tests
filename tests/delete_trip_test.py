@@ -9,7 +9,7 @@ from pages.active_and_archive_trips_page import ActiveAndArchiveTripsPage
 from pages.trip_info_page import TripInfoPage
 
 
-@pytest.mark.run(order=1)
+@pytest.mark.order1
 class TestDeleteTrip:
 
     def test_delete_trip(self, driver):
