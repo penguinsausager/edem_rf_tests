@@ -1,5 +1,4 @@
 import pytest
-
 from config import auth, base_auth_url, base_url
 
 
