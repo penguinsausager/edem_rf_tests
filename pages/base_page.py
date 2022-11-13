@@ -28,7 +28,7 @@ class BasePage:
             self.driver.add_cookie(cookie)
         self.driver.refresh()
 
-    def presence_of_element_located(self, locator, timeout=2):
+    def presence_of_element_located(self, locator, timeout=__timeout):
         try:
             Wait(self.driver, timeout).until(EC.presence_of_element_located(locator))
             return True
